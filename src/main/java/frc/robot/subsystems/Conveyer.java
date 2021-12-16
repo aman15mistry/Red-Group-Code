@@ -10,12 +10,10 @@ import frc.robot.Constants;
 
 public class Conveyer extends SubsystemBase {
   /** Creates a new Conveyer. */
-  public final Spark motor1, motor2, motor3;
+  public final Spark motor1;
   
   public Conveyer() {
     motor1 = new Spark (Constants.MOTOR1);
-    motor2 = new Spark (Constants.MOTOR2);
-    motor3 = new Spark (Constants.MOTOR3);
 
   }
 
@@ -27,7 +25,5 @@ public class Conveyer extends SubsystemBase {
   public void runConveyer(double speed)
   {
     motor1.set(speed);
-    motor2.set(speed);
-    motor3.set(speed);
   }
 }

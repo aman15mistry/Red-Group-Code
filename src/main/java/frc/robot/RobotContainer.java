@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.ConveyerOn;
 import frc.robot.commands.Drive;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeOn;
 import frc.robot.subsystems.Conveyer;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Intake;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -26,8 +28,9 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-  private final JoystickButton c1;
+  private final JoystickButton c1, intake;
   private final Conveyer c;
+  private final Intake in;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -37,11 +40,13 @@ public class RobotContainer {
     Joystick rightGamepad = new Joystick(Constants.RIGHT);
     c1 = new JoystickButton(leftGamepad, 1);
     c = new Conveyer();
+    intake = new JoystickButton(leftGamepad, 2);
+    in = new Intake();
     configureButtonBindings();
 
     driveTrain.setDefaultCommand(new Drive(driveTrain, 
                                             () -> leftGamepad.getRawAxis(1),
-                                            () -> rightGamepad.getRawAxis(5)));
+                                            () -> rightGamepad.getRawAxis(1)));
      
   }
 
@@ -53,6 +58,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     c1.whileHeld(new ConveyerOn(c, .5));
+    intake.whenPressed(new IntakeOn(in));
     
   }
 

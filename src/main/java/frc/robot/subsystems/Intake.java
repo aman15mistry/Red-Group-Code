@@ -23,5 +23,7 @@ public class Intake extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void runIntake(double speed)
+  public void runIntake(double speed){
+    intakeMotor1.set(speed);
+  }
 }

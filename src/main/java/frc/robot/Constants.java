@@ -22,12 +22,13 @@ public final class Constants {
     public static final int MOTOR2 = 5;
     public static final int MOTOR3 = 6;
     public static final int MOTOR4 = 7;
+    public static final int INTAKEMOTOR1 = 8;
 
 
 
     public static final int LEFT = 0;
     public static final int RIGHT = 1; 
 
-
+    
 
 }

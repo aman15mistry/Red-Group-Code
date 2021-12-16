@@ -18,9 +18,9 @@ public class DriveTrain extends SubsystemBase {
   private Spark backR = new Spark(Constants.FRONTR);
   private Spark backL = new Spark(Constants.FRONTR);
 
-  private final SpeedControllerGroup left = new SpeedControllerGroup (frontL, frontR);
+  private final SpeedControllerGroup left = new SpeedControllerGroup (frontL, backL);
 
-  private final SpeedControllerGroup right = new SpeedControllerGroup (backL, backR); 
+  private final SpeedControllerGroup right = new SpeedControllerGroup (frontR, backR); 
 
   private final DifferentialDrive drive = new DifferentialDrive (left, right);
 
