@@ -15,8 +15,8 @@ public class DriveTrain extends SubsystemBase {
 
   private Spark frontL = new Spark(Constants.FRONTL); 
   private Spark frontR = new Spark(Constants.FRONTR);
-  private Spark backR = new Spark(Constants.FRONTR);
-  private Spark backL = new Spark(Constants.FRONTR);
+  private Spark backR = new Spark(Constants.BACKR);
+  private Spark backL = new Spark(Constants.BACKL);
 
   private final SpeedControllerGroup left = new SpeedControllerGroup (frontL, backL);
 
@@ -36,6 +36,9 @@ public class DriveTrain extends SubsystemBase {
   public void tankDrive(double left, double right) {
     drive.tankDrive(left, right); 
   }
+
+
+  
 
 
 }

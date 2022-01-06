@@ -18,11 +18,16 @@ public final class Constants {
     public static final int FRONTR = 1;
     public static final int BACKL = 3;
     public static final int BACKR = 0;
+
+    //Conveyor 
     public static final int MOTOR1 = 4;
     public static final int MOTOR2 = 5;
-    public static final int MOTOR3 = 6;
-    public static final int MOTOR4 = 7;
-    public static final int INTAKEMOTOR1 = 8;
+
+    //Intake
+    public static final int INTAKEMOTOR1 = 6;
+
+    //Servo Endgame
+    public static final int SERVO = 7;
 
 
 

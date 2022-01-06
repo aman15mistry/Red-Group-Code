@@ -13,8 +13,8 @@ public class ConveyerOn extends CommandBase {
   double speed1;
   public ConveyerOn(Conveyer c, double speed) {
 
-    addRequirements(c);
     this.c = c;
+    addRequirements(c);
     
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -22,12 +22,14 @@ public class ConveyerOn extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    c.runConveyer(speed1);
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    c.runConveyer(speed1);
+  }
 
   // Called once the command ends or is interrupted.
   @Override
